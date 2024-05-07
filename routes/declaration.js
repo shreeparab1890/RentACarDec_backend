@@ -2,9 +2,18 @@ const express = require("express");
 const router = express.Router();
 const { body } = require("express-validator");
 const validateToken = require("../middleWare/validateToken.js");
-const { TestDecAPI, CreateDec } = require("../controllers/declaration.js");
+const {
+  TestDecAPI,
+  CreateDec,
+  GetDecById,
+  GetAllDec,
+} = require("../controllers/declaration.js");
 
 router.get("/", TestDecAPI);
+
+router.get("/get/:id", GetDecById);
+router.get("/getall", GetAllDec);
+
 //@desc Create Dec API
 //@route POST dec/add
 //@access Public

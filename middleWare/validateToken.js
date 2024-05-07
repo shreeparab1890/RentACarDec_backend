@@ -17,8 +17,12 @@ const validateToken = async (req, res, next) => {
       jwt.verify(token, secrete, (err, decoded) => {
         if (err) {
           //console.log(err);
-          logger.info(`${ip}: API /api/v1/user/getCurrent responnded with the Error: No token`);
-          return res.status(401).json({ error: err, message: "User is not authorized" });
+          logger.info(
+            `${ip}: API /api/v1/user/getCurrent responnded with the Error: No token`
+          );
+          return res
+            .status(401)
+            .json({ error: err, message: "User is not authorized" });
         }
 
         req.user = decoded.user;

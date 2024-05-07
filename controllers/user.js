@@ -68,7 +68,7 @@ const LogInUser = async (req, res) => {
 
   try {
     const oldUser = await User.find({ email });
-    console.log(oldUser);
+
     if (!oldUser[0]) {
       logger.error(`${ip}: API /api/v1/user/login  responded User does not 
       exist with email:  ${email} `);
