@@ -43,6 +43,10 @@ const DecSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  t_a_c: {
+    type: Boolean,
+    default: false,
+  },
   approved: {
     type: Boolean,
     default: true,

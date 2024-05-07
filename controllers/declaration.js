@@ -19,7 +19,7 @@ const CreateDec = async (req, res) => {
     return res.status(400).json({ errors: errors.array() });
   }
   const data = matchedData(req);
-  console.log(data);
+
   await Declaration.create({
     name: data.name,
     relation: data.relation,
@@ -30,6 +30,7 @@ const CreateDec = async (req, res) => {
     mobile: data.mobile,
     hired_car_num: data.hired_car_num,
     rental_car_agency: data.rental_car_agency,
+    t_a_c: data.t_a_c,
   })
     .then((dec) => {
       logger.info(`${ip}: API /api/v1/dec/add  responnded with Success `);

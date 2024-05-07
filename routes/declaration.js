@@ -47,6 +47,7 @@ router.post(
     body("rental_car_agency", "Enter a Valid Rental Car Agency Name").isLength({
       min: 2,
     }),
+    body("t_a_c"),
   ],
   CreateDec
 );
